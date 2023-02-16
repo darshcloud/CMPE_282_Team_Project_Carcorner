@@ -28,7 +28,7 @@
                     <form action="{% url 'register' %}" method="POST">
                          {% csrf_token %}
                         <div class="form-group form-box">
-                            <input type="text" name="firstname" class="input-text" placeholder="First Name" required>
+                            <input type="text" name="firstname"  class="input-text" placeholder="First Name" required>
                             <i class="fa fa-user"></i>
                         </div>
                         <div class="form-group form-box">
@@ -52,7 +52,7 @@
                             <i class="flaticon-lock"></i>
                         </div>
                         <div class="form-group mb-0 clearfix">
-                            <button type="submit" class="btn-md btn-theme float-left">Register</button>
+                            <button type="submit" class="btn-md btn-theme float-center">Register</button>
                         </div>
                         <div class="extra-login clearfix">
                             <span>Or Login With</span>
@@ -63,7 +63,7 @@
                             <li><a href="#" class="google-bg"><i class="fa fa-google google-i"></i><span>Google</span></a></li>
                         </ul>
                     </form>
-                    <p>Already a member? <a href="{% url 'login' %}" class="thembo"> Login here</a></p>
+                    <p>Already a Member? <a href="{% url 'login' %}" class="text-primary"> Login Here</a></p>
                 </div>
             </div>
         </div>
