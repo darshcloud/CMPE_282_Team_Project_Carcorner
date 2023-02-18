@@ -9,29 +9,29 @@
         <div class="carousel-inner banner-slider-inner text-center">
             <div class="carousel-item banner-max-height active item-bg">
                 <img class="d-block w-100 h-100" src="{% static 'img/car-1.jpg' %}" alt="banner">
-                <div class="carousel-content container banner-info-2 bi-2 text-left">
+                <div style="height:520px" class="carousel-content container banner-info-2 bi-2 text-left">
                     <h3>Wow Factor Standard</h3>
                     <h5>Allow us to guide you through the innovative stress<br>
                         free approach in finding your dream car.</h5>
-                    <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Read more</a>
+                    <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Read More</a>
                 </div>
             </div>
             <div class="carousel-item banner-max-height item-bg">
                 <img class="d-block w-100 h-100" src="{% static 'img/car-3.jpg' %}" alt="banner">
-                <div class="carousel-content container banner-info-2 bi-2 text-left">
+                <div style="height:520px" class="carousel-content container banner-info-2 bi-2 text-left">
                     <h3>Explore Your Dream Car</h3>
                     <h5>Allow us to guide you through the innovative stress<br>
                         free approach in finding your dream car.</h5>
-                    <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Read more</a>
+                    <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Read More</a>
                 </div>
             </div>
             <div class="carousel-item banner-max-height item-bg">
                 <img class="d-block w-100 h-100" src="{% static 'img/car-3.jpg' %}" alt="banner">
-                <div class="carousel-content container banner-info-2 bi-2 text-left">
+                <div style="height:520px" class="carousel-content container banner-info-2 bi-2 text-left">
                     <h3>We Are Wheel</h3>
                     <h5>Allow us to guide you through the innovative stress<br>
                         free approach in finding your dream car.</h5>
-                    <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Read more</a>
+                    <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Read More</a>
                 </div>
             </div>
         </div>
@@ -39,8 +39,8 @@
         <div class="search-box-4 sb-8">
             <form action="{% url 'search' %}" method="">
                 <div class="form-group">
-                    <input type="text" name="keyword" placeholder="Search by name" class="form-control">
-                
+                    <input type="text" name="keyword" placeholder="Search by Name" class="form-control">
+                </div>
                 <div class="form-group">
                     <select class="form-control search-fields" name="model">
                         <option selected="true" disabled="disabled">Model</option>
@@ -79,7 +79,7 @@
                                 <label>Price</label>
                                 <div data-min="0" data-max="150000"  data-min-name="min_price" data-max-name="max_price" data-unit="USD" class="range-slider-ui ui-slider" aria-disabled="false"></div>
                                 <div class="clearfix"></div>
-                            </div>
+                </div>
                 <div class="form-group">
                     <button class="btn btn-block button-theme btn-md">
                         <i class="fa fa-search"></i> Search
