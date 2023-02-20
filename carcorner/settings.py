@@ -148,3 +148,10 @@ MESSAGE_TAGS = {
 }
 
 SITE_ID = 1;
+
+# Email sending
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_PORT = 2525
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = True
