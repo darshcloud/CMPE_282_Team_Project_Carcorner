@@ -54,12 +54,12 @@ def contact(request):
         send_mail(
                 email_subject,
                 message_body,
-                'carcornerdeveloper@gmail.com',
-                [admin_email],
+                'carcorneradmin@gmail.com',
+                ['carcornerdeveloper@gmail.com'],
                 fail_silently=False,
             )
 
-            
+
         messages.success(request, 'Thank you for contacting us. We will get back to you shortly')
         return redirect('contact')
 

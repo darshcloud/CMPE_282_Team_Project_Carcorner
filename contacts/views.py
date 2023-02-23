@@ -38,8 +38,8 @@ def inquiry(request):
         send_mail(
                 'New Car Inquiry',
                 'You have a new inquiry for the car ' + car_name + '. Please login to your admin panel for more info.',
-                'carcornerdeveloper@gmail.com',
-                [admin_email],
+                'carcorneradmin@gmail.com',
+                ['carcornerdeveloper@gmail.com'],
                 fail_silently=False,
             )
 
