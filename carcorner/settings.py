@@ -89,7 +89,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'carcorner.wsgi.application'
 
-
+SOCIALACCOUNT_AUTO_SIGNUP = True
+SOCIALACCOUNT_LOGIN_ON_GET = True
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
