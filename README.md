@@ -36,10 +36,9 @@
 * 
 
 ## Carcorner admin Features
-* 
-* 
-* 
-* 
+* List cars based on color, model, year, price, description, and the city where it is available and by the condition(Eg. if it is used)
+* View enquiries from the users
+* Add, update or delete users and team members
 
 ## Additional Application Features
 * 
