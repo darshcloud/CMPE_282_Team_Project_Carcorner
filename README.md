@@ -1,5 +1,5 @@
 
-# CMPE 282 Project of Group cloud Bloom
+# CMPE 282 Project of Group Cloud Bloom
 <b>Course Name :</b> Cloud services
 
 <b>Project Name  :</b> Carcorner
