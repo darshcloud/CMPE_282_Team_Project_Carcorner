@@ -26,19 +26,21 @@ Car Corner is a website that will facilitate the sale of second-hand cars by all
 
 
 ## Carcorner Application Features
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
+* View the latest and featured cars
+* View cars in detail with all features, model,etc
+* Advanced search by year,model,state or city listed in
+* Register and login using Google SSO eliminating the creation of redundant accounts 
+* Registered users can send multiple inquiries about cars they are interested in
+* Registered users can view a customized dashboard
+* SSL certificates are installed for security
+* CI/CD using Jenkins
+
 
 ## Carcorner Admin Features
 * List cars based on color, model, year, price, description, and the city where it is available and by the condition(Eg. if it is used)
 * View enquiries from the users
 * Add, update or delete users and team members
+* Generate description for cars using chatgpt integration
 
 ## Additional Application Features
 * Dashboard View - Users can view their all their current and previous inquires.
@@ -50,6 +52,7 @@ Frontend: HTML, CSS, Bootstrap, Javascript<br/>
 Backend: Python Django framework<br/>
 Other tools: Jenkins, Visual studio code, PyCharm<br/>
 AWS components: EC2, Route 53, ELB, RDS postgreSQL, s3, certificate manager
+Third party technologies:Open AI API
   
 ## Architecture Diagram
 
@@ -94,6 +97,7 @@ EMAIL_PORT=
 EMAIL_HOST_USER=
 EMAIL_HOST_PASSWORD=
 EMAIL_USE_TLS=True
+OPENAPI_TOKEN=
 ```
 
 #### Run migrations
