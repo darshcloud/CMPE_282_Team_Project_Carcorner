@@ -1,7 +1,10 @@
 from django.shortcuts import render,get_object_or_404
 from .models import Car
-
+from django.http import JsonResponse
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from django.views.decorators.csrf import csrf_exempt
+from carcorner import settings
+
 
 # Create your views here.
 def cars(request):
@@ -82,3 +85,34 @@ def search(request):
         
     }
     return render(request, 'cars/search.html', data)
+
+import openai
+from django.shortcuts import render
+from django.contrib import messages
+from .models import Car
+
+openai.api_key = settings.OPENAPI_TOKEN
+
+@csrf_exempt
+def generate_description(request):
+    model = request.POST.get('model', '')
+    year = request.POST.get('year', '')
+
+    # Generate description using OpenAI API
+    prompt = "Please generate a description for a car with the following attributes:\n\n"
+    prompt += f"Model: {model}\n"
+    prompt += f"Year: {year}\n"
+    response = openai.Completion.create(
+        engine="text-davinci-002",
+        prompt=prompt,
+        temperature=0.7,
+        max_tokens=4000,
+        n=1,
+        stop=None,
+        timeout=10,
+    )
+    description = response.choices[0].text.strip()
+
+    # Return description as JSON response
+    data = {'description': description}
+    return JsonResponse(data)

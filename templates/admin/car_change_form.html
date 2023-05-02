@@ -1,0 +1,42 @@
+<script src="{'ckeditor/ckeditor.js'}"></script>
+{% extends "admin/change_form.html" %}
+
+{% block extrahead %}
+{{ block.super }}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    function generateDescription() {
+        // Get the values of the fields you need for the generation of the description
+        var model = $('#id_model').val();
+        var year = $('#id_year').val();
+        
+        // Call the ChatGPT API to generate the description
+        $.ajax({
+            type: "POST",
+            url: "/cars/generate_description/",
+            data: {
+                'model': model,
+                'year': year,
+            },
+            dataType: "json",
+            success: function(data) {
+                // Populate the description field with the generated text
+                console.log(data.description)
+                CKEDITOR.instances['id_description'].setData(data.description);
+
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });
+    }
+</script>
+{% endblock %}
+
+{% block object-tools-items %}
+{{ block.super }}
+<li>
+    <input type="button" value="Generate Description" onclick="generateDescription()">
+</li>
+{% endblock %}

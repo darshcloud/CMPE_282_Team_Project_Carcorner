@@ -6,6 +6,8 @@ from django.utils.html import format_html
 # Register your models here.
 
 class CarAdmin(admin.ModelAdmin):
+    change_form_template = 'admin/car_change_form.html'
+
     def thumbnail(self, object):
         return format_html('<img src="{}" width="40" style="border-radius: 50px;" />'.format(object.car_photo.url))
 
