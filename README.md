@@ -56,7 +56,7 @@ Third party technologies:Open AI API
   
 ## Architecture Diagram
 
-
+![Carcorner_Architecture_Diagram](https://user-images.githubusercontent.com/111547793/235833346-684fbcb9-08eb-48e1-b255-9f6583767574.jpeg)
 
 
 #### CI/CD Pipeline
