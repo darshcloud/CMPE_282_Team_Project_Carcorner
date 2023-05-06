@@ -29,7 +29,7 @@ SECRET_KEY = 'a4!3af^k13&$cfpvkt4yd1#+^=t50#crg50plrore2js13l%yr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*","0.0.0.0","13.56.184.116","carcorner.space"]
 
 LOGIN_REDIRECT_URL = 'dashboard'
 
@@ -95,11 +95,37 @@ SOCIALACCOUNT_LOGIN_ON_GET = True
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR / 'db.sqlite3'),
-    }
-}
+            'default': {
+                        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+                                'NAME': 'postgres',
+                                        'USER': os.getenv('RDS_USER'),
+                                                'PASSWORD': os.getenv('RDS_PASSWORD'),
+                                                        'HOST': os.getenv('RDS_HOST'),
+                                                                'PORT': '5432',
+                                                                    }
+            }
+
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO','https')
+
+
+USE_X_FORWARDED_HOST = True
+
+
+USE_X_FORWARDED_PORT = True
+
+
+CSRF_TRUSTED_ORIGINS = ["https://carcorner.space","https://carcorner.space/","https://carcorner.space/*","https://localhost","https://127.0.0.1","http://localhost","http://127.0.0.1", "https://bookhouselb-761815037.us-east-1.elb.amazonaws.com"]
+
+
+
+#
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR / 'db.sqlite3'),
+#    }
+#}
 
 
 # Password validation

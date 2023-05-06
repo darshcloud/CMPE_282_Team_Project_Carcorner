@@ -1,0 +1,4 @@
+bind = '0.0.0.0:8000'
+pythonpath="/home/ubuntu/CMPE282_Carcorner/cmpe282_carcorner"
+command="/home/ubuntu/CMPE282_Carcorner/env/bin/gunicorn"
+workers = 3
