@@ -1,0 +1,112 @@
+name: Car Corner Build and Test
+on:
+  push:
+    branches: [ main]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: ['3.8','3.9','3.10','3.11']
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install Dependencies
+      if: success() || failure()
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r ./requirements.txt
+  lint:
+    runs-on: ubuntu-latest
+    needs: build
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: ['3.8']
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Lint with black
+      if: success() || failure()
+      run: |
+        pip install black
+        black .
+    - name: Lint with isort
+      if: success() || failure()
+      run: |
+        pip install isort
+        isort .
+  deploy:
+    runs-on: ubuntu-latest
+    needs: lint
+    if: github.ref == 'refs/heads/main'
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: [3.8]
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+        AWS_ACCESS_KEY_ID: ${{secrets.AWS_KEY_ID}}
+        AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+        AWS_DEFAULT_REGION : us-west-1
+        aws_bucket: carcorner
+        source_dir: .
+    - name: Upload to S3 Bucket
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }} 
+        REGION: us-west-1
+      run: |
+        pip install virtualenv
+        python -m venv carcorner
+        source carcorner/bin/activate
+        pip install awscli
+        touch CMPE282_Carcorner.tar.gz
+        pip install -r ./requirements.txt
+        pip install awscli
+        touch CMPE282_Carcorner.tar.gz
+        tar --exclude=CMPE282_Carcorner.tar.gz   -zcvf CMPE282_Carcorner.tar.gz .
+        DATE=`date '+%s'`
+        aws s3 cp CMPE282_Carcorner.tar.gz s3://carcorner/CMPE282_Carcorner-$DATE.tar.gz
+        aws s3 cp CMPE282_Carcorner.tar.gz s3://carcorner/CMPE282_Carcorner.tar.gz
+  
+  push_to_docker:
+    needs: deploy
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: ['3.8']
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: sirisha7474/carcorner:latest
