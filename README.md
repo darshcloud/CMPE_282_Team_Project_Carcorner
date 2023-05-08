@@ -50,7 +50,7 @@ Car Corner is a website that will facilitate the sale of second-hand cars by all
 ## Tools and Technologies used
 Frontend: HTML, CSS, Bootstrap, Javascript<br/>
 Backend: Python Django framework<br/>
-Other tools: Jenkins, Visual studio code, PyCharm<br/>
+Other tools: Visual studio code, PyCharm,GitHub actions for CI/CD,Docker<br/>
 AWS components: EC2, Route 53, ELB, RDS postgreSQL, s3, certificate manager
 Third party technologies:Open AI API
   
