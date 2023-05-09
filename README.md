@@ -1,5 +1,6 @@
 
 # CMPE 282 Project of Group Cloud Bloom
+
 <b>Course Name :</b> Cloud Services
 
 <b>Project Name  :</b> Carcorner
@@ -8,12 +9,9 @@
 
 <b>University Name :</b> [San Jose State University](https://www.sjsu.edu/)
 
-
-
 <b>Professor's Name :</b> Andrew Bond
 
 <b>Team Name:</b> Cloud Bloom
-
 <b>Team Members:</b> <br/>
 [Bhavya Hegde](www.linkedin.com/in/bhavya-hegde-145b9b123)<br/>
 [Darshini Venkatesha Murthy Nag](https://www.linkedin.com/in/darshini-venkatesha-murthy-nag-90052756/)<br/>
@@ -134,15 +132,9 @@ Car details page:
 Inquiry page:
 ![Screenshot](screenshots/inquiry.png)
 
-
-
-
 ## References
-
 Icons - https://flaticon.com <br/>
-
 Car Descriptions - https://www.wikipedia.com <br/>
-
 Car Images Sources <br/>
 https://www.redbook.com.au/ <br/>
 https://www.truecar.com/ <br/>
