@@ -11,7 +11,7 @@
 
 <b>Professor's Name :</b> Andrew Bond
 
-<b>Team Name:</b> Cloud Bloom
+<b>Team Name:</b> Cloud Bloom <br/>
 <b>Team Members:</b> <br/>
 [Bhavya Hegde](www.linkedin.com/in/bhavya-hegde-145b9b123)<br/>
 [Darshini Venkatesha Murthy Nag](https://www.linkedin.com/in/darshini-venkatesha-murthy-nag-90052756/)<br/>
