@@ -60,7 +60,7 @@ Third party technologies:Open AI API
 
 
 #### CI/CD Pipeline
-* 
+* GitHub workflows, Amazon S3, Ubuntu crontab, and Docker for CI/CD of this project.
 
 ## Instructions to run project locally
 #### Create a virtual environment
