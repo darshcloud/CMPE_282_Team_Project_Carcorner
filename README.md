@@ -116,6 +116,24 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 ## Sample Demo screenshots
+Home page:
+![Screenshot](screenshots/homepage.png)
+
+Login page:
+![Screenshot](screenshots/login.png)
+
+User Dashboard page:
+![Screenshot](screenshots/userdash.png)
+
+Featured cars page:
+![Screenshot](screenshots/featuredcars.png)
+
+Car details page:
+![Screenshot](screenshots/cardetails.png)
+
+Inquiry page:
+![Screenshot](screenshots/inquiry.png)
+
 
 
 
