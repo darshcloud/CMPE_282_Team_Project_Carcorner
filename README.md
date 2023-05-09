@@ -4,7 +4,7 @@
 
 <b>Project Name  :</b> Carcorner
 
-<b>Application URL :https://carcorner.space/</b> 
+<b>Application URL :https://carcorner.space </b> 
 
 <b>University Name :</b> [San Jose State University](https://www.sjsu.edu/)
 
