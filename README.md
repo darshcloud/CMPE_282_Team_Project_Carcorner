@@ -5,7 +5,7 @@
 
 <b>Project Name  :</b> Carcorner
 
-<b>Application URL :https://carcorner.space </b> 
+<b>Application URL : https://carcorner.space </b> 
 
 <b>University Name :</b> [San Jose State University](https://www.sjsu.edu/)
 
@@ -132,7 +132,7 @@ Car details page:
 Inquiry page:
 ![Screenshot](screenshots/inquiry.png)
 
-## References
+## References and Sources
 Icons - https://flaticon.com <br/>
 Car Descriptions - https://www.wikipedia.com <br/>
 Car Images Sources <br/>
@@ -143,4 +143,7 @@ https://ar.pinterest.com/ <br/>
 https://www.brandonford.com/ <br/>
 https://www.carid.com/ <br/>
 https://www.seldenmotors.com/ <br/>
+
+AWS Documentation: https://docs.aws.amazon.com/ <br/>  
+OpenAI Documentation : https://platform.openai.com/docs/introduction/overview <br/>
 
